@@ -1,8 +1,11 @@
 import "./colaborador.css";
 
-export default function Colaborador({ colaborador, corDeFundo }) {
+export default function Colaborador({ colaborador, corDeFundo, aoDeletar }) {
   return (
     <div className="colaborador">
+      <div className="deletar" onClick={aoDeletar}>
+        x
+      </div>
       <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
         <img src={colaborador.imagem} alt={colaborador.nome} />
       </div>

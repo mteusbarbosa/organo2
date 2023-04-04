@@ -1,7 +1,7 @@
 import Colaborador from "../Colaborador/Colaborador";
 import "./time.css";
 
-export default function Time({ time, colaboradores }) {
+export default function Time({ time, colaboradores, aoDeletar }) {
   return (
     colaboradores.length > 0 && (
       <section
@@ -14,12 +14,13 @@ export default function Time({ time, colaboradores }) {
         <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
         <div className="colaboradores">
           {colaboradores.map((colaborador, indice) => {
-            console.log(`Renderizando: ${colaborador.nome}`)
+           
             return (
               <Colaborador
                 key={indice}
                 colaborador={colaborador}
                 corDeFundo={time.corSecundaria}
+                aoDeletar={aoDeletar}
               />
             );
           })}
