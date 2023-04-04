@@ -13,13 +13,16 @@ export default function Time({ time, colaboradores }) {
       >
         <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
         <div className="colaboradores">
-          {colaboradores.map((colaborador, indice) => (
-            <Colaborador
-              key={indice}
-              colaborador={colaborador}
-              corDeFundo={time.corSecundaria}
-            />
-          ))}
+          {colaboradores.map((colaborador, indice) => {
+            console.log(`Renderizando: ${colaborador.nome}`)
+            return (
+              <Colaborador
+                key={indice}
+                colaborador={colaborador}
+                corDeFundo={time.corSecundaria}
+              />
+            );
+          })}
         </div>
       </section>
     )
